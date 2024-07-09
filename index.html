@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Send Message to LINE Group</title>
+</head>
+<body>
+<button onclick="sendMessage()">Send 'Ray coming' to LINE Group</button>
+
+<script>
+function sendMessage() {
+  fetch('/send-message', { method: 'POST' })
+    .then(response => response.text())
+    .then(data => alert(data))
+    .catch(error => console.error('Error:', error));
+}
+</script>
+</body>
+</html>
